@@ -1,0 +1,86 @@
+@keyframes flip {
+  0%, 20% {
+    transform: rotateZ(360deg);
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  width: 98vw;
+  background-color: black;
+}
+body .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 98%;
+  width: 98%;
+  border-radius: 25px;
+  background-color: #f7dab4;
+}
+body .main__profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: inherit;
+  height: 10%;
+  gap: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+body .main__profile h5 {
+  font-size: larger;
+  letter-spacing: 5px;
+  font-family: "Playfair Display";
+  padding: 0px;
+  margin: 0px;
+}
+body .main__translation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: avenir;
+  width: inherit;
+  height: 60%;
+  gap: 10%;
+}
+body .main__translation__button {
+  height: 50px;
+  width: 50px;
+  animation: flip 5s infinite;
+}
+body .main__translation__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 90%;
+  width: 30%;
+  border-radius: 20px;
+}
+body .main__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  font-family: "Chakra Petch";
+  width: inherit;
+  height: 10%;
+  font-size: xx-large;
+}
+body .main__title h1 {
+  padding: 0px;
+  padding-left: 10%;
+  margin: 0px;
+  letter-spacing: 5px;
+}
+body .main__links {
+  width: inherit;
+  height: 10%;
+}

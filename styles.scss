@@ -1,0 +1,79 @@
+@use "./partials/mixins";
+@use "./partials/palette";
+
+@keyframes flip {
+    0%,20% {
+      transform: rotateZ(360deg);
+    };
+}
+
+body{
+    @include mixins.flexing(column, center, center);
+    height: 98vh;
+    width: 98vw;
+    background-color: black;
+    .main{
+        @include mixins.flexing(column,center, center);
+        height: 98%;
+        width: 98%;
+        border-radius: 25px;
+        background-color: #f7dab4;
+        &__profile{
+            //background-color: blue;
+            @include mixins.flexing(row, space-around, center);
+            width: inherit;
+            height: 10%;
+            gap: 50%;
+            margin-left: 20%;
+            margin-right: 20%;
+            h5{
+                font-size: larger;
+                letter-spacing: 5px;
+                font-family: 'Playfair Display';
+                padding: 0px;
+                margin: 0px;
+            }
+
+        }
+        &__translation{
+            @include mixins.flexing(row, center, center);
+            font-family: avenir;
+            width: inherit;
+            height: 60%;
+            gap: 10%;
+            &__button{
+                height: 50px;
+                width: 50px;
+                animation: flip 5s infinite;
+            }
+            &__inner{
+                @include mixins.flexing(column, start, center);
+                height: 90%;
+                width: 30%;
+                //background-color: rgba($color: white, $alpha: 0.1);
+                border-radius: 20px;
+            }
+
+        }
+        &__title{
+            @include mixins.flexing(column, center, start);
+            font-family: 'Chakra Petch';
+
+            width: inherit;
+            height: 10%;
+            //background-color: red;
+            font-size: xx-large;
+            h1 {
+                padding: 0px;
+                padding-left: 10%;
+                margin: 0px;
+                letter-spacing: 5px;
+            }
+        }
+        &__links{
+            width: inherit;
+            height: 10%;
+        }
+
+    }
+}
