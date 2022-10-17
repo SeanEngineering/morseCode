@@ -4,6 +4,7 @@
   }
 }
 body {
+  font-family: "Chakra Petch";
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,20 +26,38 @@ body .main {
 body .main__profile {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: inherit;
   height: 10%;
-  gap: 50%;
-  margin-left: 20%;
-  margin-right: 20%;
+  gap: 10px;
 }
-body .main__profile h5 {
-  font-size: larger;
-  letter-spacing: 5px;
-  font-family: "Playfair Display";
-  padding: 0px;
+body .main__profile__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 0px;
+  text-decoration: none;
+  color: white;
+  width: auto;
+  padding: 5px;
+  height: 12px;
+  background-color: gray;
+  border-radius: 3px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  transition: 0.2s;
+}
+body .main__profile__link--morse {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+body .main__profile__link:hover {
+  color: black;
+  background-color: white;
+  transition: 0.2s;
 }
 body .main__translation {
   display: flex;
@@ -64,6 +83,14 @@ body .main__translation__inner {
   width: 30%;
   border-radius: 20px;
 }
+body .main__translation__inner textarea {
+  height: 70%;
+  resize: none;
+  border: none;
+}
+body .main__translation__inner textarea:focus {
+  outline: none;
+}
 body .main__title {
   display: flex;
   flex-direction: column;
@@ -73,12 +100,21 @@ body .main__title {
   width: inherit;
   height: 10%;
   font-size: xx-large;
+  gap: 10px;
 }
 body .main__title h1 {
   padding: 0px;
   padding-left: 10%;
   margin: 0px;
-  letter-spacing: 5px;
+  letter-spacing: 15px;
+  font-size: 20px;
+}
+body .main__title h5 {
+  padding: 0px;
+  padding-left: 10%;
+  margin: 0px;
+  letter-spacing: 15px;
+  font-size: 15px;
 }
 body .main__links {
   width: inherit;

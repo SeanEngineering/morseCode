@@ -8,6 +8,7 @@
 }
 
 body{
+    font-family: 'Chakra Petch';
     @include mixins.flexing(column, center, center);
     height: 98vh;
     width: 98vw;
@@ -20,19 +21,34 @@ body{
         background-color: #f7dab4;
         &__profile{
             //background-color: blue;
-            @include mixins.flexing(row, space-around, center);
+            @include mixins.flexing(row, center, center);
             width: inherit;
             height: 10%;
-            gap: 50%;
-            margin-left: 20%;
-            margin-right: 20%;
-            h5{
-                font-size: larger;
-                letter-spacing: 5px;
-                font-family: 'Playfair Display';
-                padding: 0px;
-                margin: 0px;
+            gap: 10px;
+           &__link{
+            @include mixins.flexing(column,center, center);
+            text-align: center;
+            margin: 0px;
+            text-decoration: none;
+            color: white;
+            width: auto;
+            padding: 5px;
+            height: 12px;
+            background-color: gray;
+            border-radius: 3px;
+            font-size: 15px;
+            letter-spacing: 3px;
+            transition: 0.2s;
+            &--morse{
+                font-size: 10px;
+                letter-spacing: 1px;
             }
+            &:hover{
+                color: black;
+                background-color: white;
+                transition: 0.2s;
+            }
+           }
 
         }
         &__translation{
@@ -52,6 +68,14 @@ body{
                 width: 30%;
                 //background-color: rgba($color: white, $alpha: 0.1);
                 border-radius: 20px;
+                textarea {
+                    height: 70%;
+                    resize: none;
+                    border: none;
+                    &:focus{
+                        outline: none;
+                    }
+                }
             }
 
         }
@@ -63,11 +87,20 @@ body{
             height: 10%;
             //background-color: red;
             font-size: xx-large;
+            gap: 10px;
             h1 {
                 padding: 0px;
                 padding-left: 10%;
                 margin: 0px;
-                letter-spacing: 5px;
+                letter-spacing: 15px;
+                font-size: 20px;
+            }
+            h5 {
+                padding: 0px;
+                padding-left: 10%;
+                margin: 0px;
+                letter-spacing: 15px;
+                font-size: 15px;
             }
         }
         &__links{
