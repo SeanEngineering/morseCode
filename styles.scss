@@ -52,8 +52,7 @@ body{
 
         }
         &__translation{
-            @include mixins.flexing(row, center, center);
-            font-family: avenir;
+            @include mixins.flexing(column, center, center);
             width: inherit;
             height: 60%;
             gap: 10%;
@@ -64,12 +63,14 @@ body{
             }
             &__inner{
                 @include mixins.flexing(column, start, center);
-                height: 90%;
-                width: 30%;
+                height: 40%;
+                width: 80%;
                 //background-color: rgba($color: white, $alpha: 0.1);
                 border-radius: 20px;
-                textarea {
-                    height: 70%;
+                textArea {
+                    text-align: start;
+                    height: 40%;
+                    width: 80%;
                     resize: none;
                     border: none;
                     &:focus{
@@ -81,8 +82,6 @@ body{
         }
         &__title{
             @include mixins.flexing(column, center, start);
-            font-family: 'Chakra Petch';
-
             width: inherit;
             height: 10%;
             //background-color: red;

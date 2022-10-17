@@ -61,10 +61,9 @@ body .main__profile__link:hover {
 }
 body .main__translation {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: avenir;
   width: inherit;
   height: 60%;
   gap: 10%;
@@ -79,16 +78,18 @@ body .main__translation__inner {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  height: 90%;
-  width: 30%;
+  height: 40%;
+  width: 80%;
   border-radius: 20px;
 }
-body .main__translation__inner textarea {
-  height: 70%;
+body .main__translation__inner textArea {
+  text-align: start;
+  height: 40%;
+  width: 80%;
   resize: none;
   border: none;
 }
-body .main__translation__inner textarea:focus {
+body .main__translation__inner textArea:focus {
   outline: none;
 }
 body .main__title {
@@ -96,7 +97,6 @@ body .main__title {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  font-family: "Chakra Petch";
   width: inherit;
   height: 10%;
   font-size: xx-large;

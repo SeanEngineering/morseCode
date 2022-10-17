@@ -25,18 +25,58 @@ const morseLibrary = {
     x: '-..-',
     y: '-.--',
     z: '--..',
+    1: '.----',
+    2: '..---',
+    3: '...--',
+    4: '....-',
+    5: '.....',
+    6: '-....',
+    7: '--...',
+    8: '---..',
+    9: '----.',
+    0: '-----',
+    ',': '--..--',
+    '.': '.-.-.-',
+    '?': '..--..',
+    '!': '-.-.--',
+    '"': '.-..-.',
+    ':': '---...',
+    "'": '.----.',
+    '-': '-...-',
+    '/': '-..-.',
+    '(': '-.--.',
+    ')': '-.--.-'
   }
+
+const convertToMorse = (string) =>{
+  if (typeof(string) == 'number'){
+    string = string.toString();
+  }
+  let array = string.toLowerCase().split('');
+  let morseArray = [];
+  for (let i = 0; i < array.length; i++){
+    if ((array[i] == ' ') || array[i] == '\n'){
+      morseArray.push('| ');
+    } else {
+      morseArray.push(`${morseLibrary[array[i]]} `);
+    }
+  }
+
+  return morseArray.join('').trim();
+}
 
 const englishBox = document.getElementById('english');
 const morseBox = document.getElementById('morse');
-const checkInput = () => {
-    let englishInput = englishBox.innerText;
-    console.log(englishInput);
-}
 
-window.addEventListener('keydown', checkInput);
+englishBox.addEventListener('keypress', function enterPress(e){
+  if (e.which==13){
+    morseBox.innerText = convertToMorse(englishBox.value);
+  }
+})
+
 
 const portfolio = document.getElementById('portfolio');
+
 
 portfolio.addEventListener('mouseenter', ()=>{
   portfolio.innerText = '.--. --- .-. - ..-. --- .-.. .. ---';
