@@ -25,37 +25,18 @@ body{
             width: inherit;
             height: 10%;
             gap: 10px;
-           &__link{
-            @include mixins.flexing(column,center, center);
-            text-align: center;
-            margin: 0px;
-            text-decoration: none;
-            color: white;
-            width: auto;
-            padding: 5px;
-            height: 12px;
-            background-color: gray;
-            border-radius: 3px;
-            font-size: 15px;
-            letter-spacing: 3px;
-            transition: 0.2s;
-            &--morse{
-                font-size: 10px;
-                letter-spacing: 1px;
-            }
-            &:hover{
-                color: black;
-                background-color: white;
-                transition: 0.2s;
-            }
-           }
+           
 
         }
         &__translation{
             @include mixins.flexing(column, center, center);
             width: inherit;
             height: 60%;
-            gap: 10%;
+            gap: 10px;
+            h1{
+                font-size: 30px;
+                letter-spacing: 5px;
+            }
             &__button{
                 height: 50px;
                 width: 50px;
@@ -71,12 +52,31 @@ body{
                     text-align: start;
                     height: 40%;
                     width: 80%;
+                    border-radius: 10px;
                     resize: none;
                     border: none;
                     &:focus{
                         outline: none;
                     }
                 }
+                #morse{
+                    height: 40%;
+                    width: 80%;
+                    overflow-y: auto;
+                    background-color: lightgray;
+                    border-radius: 10px;
+                }
+                img{
+                    cursor: pointer;
+                    position: relative;
+                    bottom: 85px;
+                    left: 38%;
+                }
+            }
+            &__sub{
+                letter-spacing: 5px;
+                font-size: 15px;
+
             }
 
         }
@@ -87,14 +87,20 @@ body{
             //background-color: red;
             font-size: xx-large;
             gap: 10px;
-            h1 {
+            &__main {
                 padding: 0px;
                 padding-left: 10%;
                 margin: 0px;
                 letter-spacing: 15px;
                 font-size: 20px;
+                &--morse{
+                    letter-spacing: 5px;
+                    font-size: 20px;
+                    transition: 0.5s;
+                    opacity: 0;
+                }
             }
-            h5 {
+            &__sub {
                 padding: 0px;
                 padding-left: 10%;
                 margin: 0px;
@@ -102,9 +108,34 @@ body{
                 font-size: 15px;
             }
         }
-        &__links{
-            width: inherit;
+        &__profile{
+            @include mixins.flexing(column,center, center);
+            width: 80%;
             height: 10%;
+            &__link{
+                @include mixins.flexing(column,center, center);
+                text-align: center;
+                margin: 0px;
+                text-decoration: none;
+                color: white;
+                width: auto;
+                padding: 5px;
+                height: 12px;
+                background-color: gray;
+                border-radius: 3px;
+                font-size: 15px;
+                letter-spacing: 3px;
+                transition: 0.2s;
+                &--morse{
+                    font-size: 10px;
+                    letter-spacing: 1px;
+                }
+                &:hover{
+                    color: black;
+                    background-color: white;
+                    transition: 0.2s;
+                }
+               }
         }
 
     }
