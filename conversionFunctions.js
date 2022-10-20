@@ -54,9 +54,8 @@ export const convertToEng = (string) => {
   for (let item of morseArray) {
     //Handling new lines
     if (item.includes('\n')) {
-      let temp = item.split('\n');
+      let temp = item.split('\n').join(' | ').split(' ');
       console.log(temp);
-      englishArray.push(' ');
       for (let properties of temp) {
         console.log(properties);
         if (properties == '|' || properties == '/') {
