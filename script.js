@@ -1,5 +1,4 @@
 import {morseLibrary, convertToEng, convertToMorse} from "./conversionFunctions.js"
-
 const englishBox = document.getElementById('english');
 const morseBox = document.getElementById('morse');
 const morseCopy = document.getElementById('morseCopy');
