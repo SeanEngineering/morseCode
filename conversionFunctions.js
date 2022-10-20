@@ -84,7 +84,7 @@ export const convertToEng = (string) => {
         Object.keys(morseLibrary).find((key) => morseLibrary[key] === item) ==
         undefined
       ) {
-        return `(${item} is not in morse library)`;
+        return `(${item} is not defined in this morse library)`;
       } else {
         englishArray.push(
           Object.keys(morseLibrary).find((key) => morseLibrary[key] === item)

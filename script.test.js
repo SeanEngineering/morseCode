@@ -5,12 +5,12 @@ import {
 } from './conversionFunctions.js';
 
 describe('Converts to Morse', () => {
-  it('converts hello world', () => {
+  it('handles lower case', () => {
     expect(convertToMorse('hello world')).toBe(
       '.... . .-.. .-.. --- | .-- --- .-. .-.. -..'
     );
   });
-  it('converts HELLO WORLD', () => {
+  it('handles upper case', () => {
     expect(convertToMorse('HELLO WORLD')).toBe(
       '.... . .-.. .-.. --- | .-- --- .-. .-.. -..'
     );
@@ -27,6 +27,11 @@ describe('Converts to English', () => {
       'hello world'
     );
   });
+  it('handles slash notation', () => {
+    expect(convertToEng('.... . .-.. .-.. --- / .-- --- .-. .-.. -..')).toBe(
+      'hello world'
+    );
+  });
   it('Accounts for numbers', () => {
     expect(
       convertToEng(
@@ -37,21 +42,25 @@ describe('Converts to English', () => {
 });
 
 describe('Handles unexpected chars', () => {
-  it("returns the character that's not in the library to eng", () => {
-    expect(convertToMorse('hello `world')).toBe(
-      '(` is not defined in this library)'
+  it("returns the first component that's not in the library to eng", () => {
+    expect(convertToEng('hello `world')).toBe(
+      '(hello is not defined in this morse library)'
     );
   });
-  it('converts HELLO WORLD', () => {
+  it("returns the first component that's not in the library", () => {
     expect(convertToMorse('*')).toBe('(* is not defined in this library)');
   });
 });
 
 describe('Handles new lines', () => {
   it('handles a new line', () => {
-    expect(convertToMorse('hello \n world')).toBe('hello world');
+    expect(convertToEng('.... . .-.. .-.. ---\n.-- --- .-. .-.. -..')).toBe(
+      'hello world'
+    );
   });
-  it('converts HELLO WORLD', () => {
-    expect(convertToMorse('*')).toBe('(* is not defined in this library)');
+  it('converts multiple new lines to spaces', () => {
+    expect(
+      convertToEng('.... . .-.. .-.. ---\n\n\n\n.-- --- .-. .-.. -..')
+    ).toBe('hello    world');
   });
 });
